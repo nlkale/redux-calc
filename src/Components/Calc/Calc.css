@@ -1,0 +1,13 @@
+body {
+	padding: 30px;
+}
+.operands {
+	max-width: 100px;
+}
+.operands1 {
+	max-width: 60px;
+}
+.center > * {
+	display: flex;
+	justify-content: center;
+}
