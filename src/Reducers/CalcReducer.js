@@ -1,38 +1,26 @@
 const initialState = {
-	first: 5,
-	second: 2,
-	result: ""
+	result: "..."
 }
 
 const CalcReducer = (state = initialState, action) => {
 	switch(action.type){
-		case "MARK":
-			if(action.payload === "+"){
-				return{
-					result: state.first + state.second
-				}
+		case "PLUS":
+			return{
+				result: parseInt(action.payload1) + parseInt(action.payload2)
 			}
-			if(action.payload === "-"){
-				return{
-					result: state.first - state.second
-				}
-			};
-			if(action.payload === "*"){
-				return{
-					result: state.first * state.second
-				}
-			};
-			if(action.payload === "/"){
-				if(action.second === 0){
-					return {result: 0}
-				} 
-				else { return{ result: state.first / state.second } }
-				
-			};
-			break
-		case "FIRST":
-			
-			
+		case "MINUS":
+			return{
+				result: parseInt(action.payload1) - parseInt(action.payload2)
+			}
+		case "MULTIPLE":
+			return{
+				result: parseInt(action.payload1) * parseInt(action.payload2)
+			}
+		case "DIVISION":
+			return{
+				result: parseInt(action.payload1) / parseInt(action.payload2)
+			}
+		
 		default:
 			return state;
 	}
